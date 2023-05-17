@@ -150,7 +150,8 @@ h6 {
 }
 
 #header .logo a {
-  color: #222222;
+  color: #106eea;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
 }
 
 #header .logo a span {
@@ -334,7 +335,7 @@ h6 {
 
 #hero:before {
   content: "";
-  background: rgba(50, 50, 50, 0.7);
+  background: rgba(0, 0, 0, 0.5);
   position: absolute;
   bottom: 0;
   top: 0;
@@ -754,6 +755,7 @@ section {
 .team .member .member-img {
   position: relative;
   overflow: hidden;
+  height:300px;
 }
 
 .team .member .social {
@@ -840,56 +842,6 @@ section {
   background: #f1f6fe;
 }
 
-#footer .footer-newsletter {
-  padding: 50px 0;
-  background: #f1f6fe;
-  text-align: center;
-  font-size: 15px;
-}
-
-#footer .footer-newsletter h4 {
-  font-size: 24px;
-  margin: 0 0 20px 0;
-  padding: 0;
-  line-height: 1;
-  font-weight: 600;
-}
-
-#footer .footer-newsletter form {
-  margin-top: 30px;
-  background: #fff;
-  padding: 6px 10px;
-  position: relative;
-  border-radius: 4px;
-  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.06);
-  text-align: left;
-}
-
-#footer .footer-newsletter form input[type=email] {
-  border: 0;
-  padding: 4px 8px;
-  width: calc(100% - 100px);
-}
-
-#footer .footer-newsletter form input[type=submit] {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  border: 0;
-  background: none;
-  font-size: 16px;
-  padding: 0 20px;
-  background: #106eea;
-  color: #fff;
-  transition: 0.3s;
-  border-radius: 0 4px 4px 0;
-  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
-}
-
-#footer .footer-newsletter form input[type=submit]:hover {
-  background: #0d58ba;
-}
 
 #footer .footer-top {
   padding: 60px 0 30px 0;
@@ -906,6 +858,7 @@ section {
   padding: 2px 0 2px 0;
   line-height: 1;
   font-weight: 700;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 #footer .footer-top .footer-contact h3 span {
