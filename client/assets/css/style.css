@@ -539,13 +539,13 @@ section {
 /*--------------------------------------------------------------
 # Featured Services
 --------------------------------------------------------------*/
-.featured-services .card:hover::before {
+.featured-services .fee:hover::before {
   background: #106eea;
   top: 0;
   border-radius: 0px;
 }
 
-.featured-services .card {
+.featured-services .fee {
   padding: 10px;
   position: relative;
   overflow: hidden;
@@ -555,7 +555,7 @@ section {
   z-index: 1;
 }
 
-.featured-services .card::before {
+.featured-services .fee::before {
   content: "";
   position: absolute;
   background: #cbe0fb;
@@ -567,14 +567,14 @@ section {
   z-index: -1;
 }
 
-.featured-services .card:hover::before {
+.featured-services .fee:hover::before {
   background: #106eea;
   top: 0;
   border-radius: 0px;
 }
 
-.featured-services .card:hover .card-title,
-.featured-services .card:hover .card-subtitle {
+.featured-services .fee:hover .card-title,
+.featured-services .fee:hover .card-subtitle {
   color: #fff;
 }
 
