@@ -10,10 +10,10 @@ const abstractSubmissionSchema = new mongoose.Schema({
     phone: {
         type: String,
     },
-    subject: {
+    title: {
         type: String,
     },
-    message: {
+    abstractFile: {
         type: String,
     },
     createdAt:{

@@ -14,7 +14,10 @@ db.once('open', () => console.log('Connected to Database'));
 import cors from 'cors';
 app.use(cors());
 
-app.use(express.json());
+import bodyParser from 'body-parser';
+app.use(bodyParser.urlencoded({
+    extended:true
+}))
 
 app.use(express.static("client"));
 

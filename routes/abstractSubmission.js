@@ -20,15 +20,28 @@ router.get('/', async (req, res) => {
     }
 })
 
+import multer from "multer"
+const multerStorage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, "uploads/abstractSubmission");
+    },
+    filename: (req, file, cb) => {
+        const ext = file.mimetype.split("/")[1];
+        cb(null, `${file.fieldname}-${Date.now()}.${ext}`);
+    },
+});
+const upload = multer({ storage: multerStorage });
+
 //POST
-router.post('/', async (req, res) => {
+router.post('/', upload.single('abstractFile'), async (req, res) => {
     try {
+        const abstractFileUrl=`http://localhost:3000/${req.file.path}`;
         const abstractSubmission = new AbstractSubmission({
             name: req.body.name,
             email: req.body.email,
             phone: req.body.phone,
-            subject: req.body.subject,
-            message: req.body.message
+            title: req.body.subject,
+            abstractFile: abstractFileUrl
         })
         const newAbstractSubmission = await abstractSubmission.save();
         res.status(200).json({
