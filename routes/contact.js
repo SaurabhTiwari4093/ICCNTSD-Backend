@@ -21,7 +21,10 @@ router.get('/', async (req, res) => {
 })
 
 //POST
-router.post('/', async (req, res) => {
+import multer from "multer";
+const upload = multer({ dest: "client/uploads/abstractSubmission" });
+
+router.post('/', upload.none(), async (req, res) => {
     try {
         const contact = new Contact({
             name: req.body.name,

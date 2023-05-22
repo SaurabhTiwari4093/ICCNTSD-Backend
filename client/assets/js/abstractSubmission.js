@@ -10,11 +10,11 @@ const sendAbstractData = async (e) => {
         alert("All fields in contact form are required.");
         return;
     }
-    if (abstractFile==null) {
+    if (abstractFile == null) {
         alert("Please upload file before submitting.");
         return;
     }
-    if(abstractFile.size>1000000){
+    if (abstractFile.size > 1000000) {
         alert("Please upload file less then 1mb.");
         return
     }
@@ -32,9 +32,6 @@ const sendAbstractData = async (e) => {
 
     const requestOptions = {
         method: "POST",
-        // headers: {
-        //     "Content-Type": "multipart/form-data"
-        // },
         body: formData
     }
     const url = "https://www.iccntsd.in/api/abstractSubmission";
@@ -43,6 +40,7 @@ const sendAbstractData = async (e) => {
             .then((response) => response.json())
             .then((data) => {
                 if (data.status === 200) {
+                    document.getElementById("abstractSubmissionForm").reset();
                     sendMessageLoader.style.display = "none";
                     sendMessageText.style.display = "block";
                     alert("Thank you! Your file has been sent successfully.");
