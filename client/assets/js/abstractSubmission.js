@@ -4,15 +4,19 @@ const sendAbstractData = async (e) => {
     const phone = document.getElementById("phone").value;
     const email = document.getElementById("email").value;
     const title = document.getElementById("title").value;
-    const file = document.getElementById("file").files[0];
+    const abstractFile = document.getElementById("abstractFile").files[0];
 
     if (name == "" || phone == "" || email == "" || title == "") {
         alert("All fields in contact form are required.");
         return;
     }
-    if (file==null) {
+    if (abstractFile==null) {
         alert("Please upload file before submitting.");
         return;
+    }
+    if(abstractFile.size>1000000){
+        alert("Please upload file less then 1mb.");
+        return
     }
     const sendMessageLoader = document.getElementById("sendMessageLoader");
     const sendMessageText = document.getElementById("sendMessageText");
@@ -24,7 +28,7 @@ const sendAbstractData = async (e) => {
     formData.append("phone", phone);
     formData.append("email", email);
     formData.append("title", title);
-    formData.append("abstractFile", file);
+    formData.append("abstractFile", abstractFile);
 
     const requestOptions = {
         method: "POST",
