@@ -37,7 +37,7 @@ const sendAbstractData = async (e) => {
         // },
         body: formData
     }
-    const url = "http://localhost:3000/api/abstractSubmission";
+    const url = "https://www.iccntsd.in/api/abstractSubmission";
     try {
         await fetch(url, requestOptions)
             .then((response) => response.json())

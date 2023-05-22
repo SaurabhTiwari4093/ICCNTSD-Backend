@@ -27,7 +27,7 @@ const sendContactUsData = async (e) => {
         },
         body: JSON.stringify(formData)
     }
-    const url = "http://localhost:3000/api/contact";
+    const url = "https://www.iccntsd.in/api/contact";
     try {
         await fetch(url, requestOptions)
             .then((response) => response.json())
