@@ -34,12 +34,10 @@ const multerStorage = multer.diskStorage({
 });
 const upload = multer({ storage: multerStorage });
 
-import path from "path";
-const __dirname = path.resolve();
 
 router.post('/', upload.single('abstractFile'), async (req, res) => {
     try {
-        const abstractFileUrl = path.join(__dirname, req.file.path);
+        const abstractFileUrl = "https://www.iccntsd.in/uploads/abstractSubmission/"+req.file.filename;
         const abstractSubmission = new AbstractSubmission({
             name: req.body.name,
             email: req.body.email,
