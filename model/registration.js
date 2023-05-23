@@ -4,17 +4,50 @@ const registrationSchema = new mongoose.Schema({
     name: {
         type: String,
     },
-    email: {
+    presentDesignation: {
         type: String,
     },
-    phone: {
+    nameOfInstitute: {
         type: String,
     },
-    subject: {
+    titleOfAbstract: {
         type: String,
     },
-    message: {
+    modeOfPresentation: {
         type: String,
+    },
+    correspondenceAddress:{
+        type: String,
+    },
+    mobileNo:{
+        type:String,
+    },
+    emailAddress:{
+        type:String,
+    },
+    nameOfAccountholder:{
+        type:String,
+    },
+    accountNo:{
+        type:String,
+    },
+    nameAndAddressOfBankBranch:{
+        type:String,
+    },
+    IFSCcode:{
+        type:String,
+    },
+    amountPaid:{
+        type:String,
+    },
+    transactionIDno:{
+        type:String,
+    },
+    dateOfTransaction:{
+        type:String,
+    },
+    paymentReceipt:{
+        type:String,
     },
     createdAt:{
         type:Date,

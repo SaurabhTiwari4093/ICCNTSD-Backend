@@ -7,7 +7,7 @@ const sendAbstractData = async (e) => {
     const abstractFile = document.getElementById("abstractFile").files[0];
 
     if (name == "" || phone == "" || email == "" || title == "") {
-        alert("All fields in contact form are required.");
+        alert("All fields in form are required.");
         return;
     }
     if (abstractFile == null) {
