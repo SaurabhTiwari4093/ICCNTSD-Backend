@@ -22,7 +22,7 @@ router.get('/', async (req, res) => {
 
 //POST
 import multer from "multer";
-const upload = multer({ dest: "client/uploads/abstractSubmission" });
+const upload = multer();
 
 router.post('/', upload.none(), async (req, res) => {
     try {
