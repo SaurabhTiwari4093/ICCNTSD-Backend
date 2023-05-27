@@ -21,23 +21,33 @@ router.get('/', async (req, res) => {
 })
 
 //POST
+import { S3Client } from "@aws-sdk/client-s3";
+import multer from "multer";
+import multerS3 from "multer-s3";
 
-import multer from "multer"
-const multerStorage = multer.diskStorage({
-    destination: (req, file, cb) => {
-        cb(null, "client/uploads/paymentReceipt");
-    },
-    filename: (req, file, cb) => {
-        const ext = file.mimetype.split("/")[1];
-        cb(null, `${file.fieldname}-${Date.now()}.${ext}`);
+const s3 = new S3Client({
+    region: 'ap-south-1',
+    credentials: {
+        secretAccessKey: 'TQpM5APN1GZXSuaoWMzmmG+0SzQ+QIGjJipsOUEa',
+        accessKeyId: 'AKIAZJ2NPFB7NICVVINQ',
     },
 });
-const upload = multer({ storage: multerStorage });
 
+const upload = multer({
+    storage: multerS3({
+        s3: s3,
+        bucket: "iccntsd",
+        key: (req, file, cb) => {
+            const ext = file.mimetype.split("/")[1];
+            const fileName = file.fieldname + "_" + Date.now() +"."+ext;
+            cb(null, fileName);
+        }
+    })
+});
 
 router.post('/', upload.single('paymentFile'), async (req, res) => {
     try {
-        const paymentFileUrl = "https://www.iccntsd.in/uploads/paymentReceipt/"+req.file.filename;
+        const paymentFileUrl = req.file.location;
         const registration = new Registration({
             name:req.body.name,
             presentDesignation:req.body.presentDesignation,
