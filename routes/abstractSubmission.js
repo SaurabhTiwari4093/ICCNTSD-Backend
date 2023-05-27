@@ -37,9 +37,11 @@ const upload = multer({
     storage: multerS3({
         s3: s3,
         bucket: "iccntsd",
+        contentType: multerS3.AUTO_CONTENT_TYPE,
+        contentDisposition: "inline",
         key: (req, file, cb) => {
             const ext = file.mimetype.split("/")[1];
-            const fileName = file.fieldname + "_" + Date.now() +"."+ext;
+            const fileName = file.fieldname + "_" + Date.now() + "." + ext;
             cb(null, fileName);
         }
     })
