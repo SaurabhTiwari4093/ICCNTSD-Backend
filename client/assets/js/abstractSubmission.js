@@ -14,6 +14,10 @@ const sendAbstractData = async (e) => {
         alert("Please upload file before submitting.");
         return;
     }
+    if(abstractFile.type!="application/pdf"){
+        alert("Please upload file in pdf format.");
+        return;
+    }
     if (abstractFile.size > 1000000) {
         alert("Please upload file less then 1mb.");
         return

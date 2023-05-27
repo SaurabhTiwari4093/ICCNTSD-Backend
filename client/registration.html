@@ -150,7 +150,7 @@
                     </div>
                     <div class="col-12 col-lg-6">
                         <h3 class="mb-2 mt-3">Registration Form</h3>
-                        <p class="mb-4">Fill form and upload payment receipt.</p>
+                        <p class="mb-4">Fill form and upload payment receipt(pdf/image).</p>
                         <div class="card shadow-sm border-0">
                             <div class="card-body p-4">
                                 <form onsubmit="sendRegistrationData(event)" id="registrationForm">
@@ -227,7 +227,7 @@
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label">Upload payment receipt *</label>
-                                            <input type="file" class="form-control" id="paymentFile" required>
+                                            <input type="file" class="form-control" id="paymentFile" accept="image/png, image/jpeg, image/jpeg, application/pdf" required>
                                         </div>
                                     </div>
                                     <div class="d-flex justify-content-center mt-3">

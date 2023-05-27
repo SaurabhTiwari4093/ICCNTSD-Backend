@@ -25,6 +25,10 @@ const sendRegistrationData = async (e) => {
         alert("Please upload receipt before submitting.");
         return;
     }
+    if(paymentFile.type!="application/pdf" && paymentFile.type!="image/jpg" && paymentFile.type!="image/jpeg" && paymentFile.type!="image/png"){
+        alert("Please upload receipt in pdf or image format.");
+        return;
+    }
     if (paymentFile.size > 1000000) {
         alert("Please upload file less then 1mb.");
         return
