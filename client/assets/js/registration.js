@@ -4,7 +4,7 @@ const sendRegistrationData = async (e) => {
     const presentDesignation = document.getElementById("presentDesignation").value;
     const nameOfInstitute = document.getElementById("nameOfInstitute").value;
     const titleOfAbstract = document.getElementById("titleOfAbstract").value;
-    const modeOfPresentation = document.getElementById("modeOfPresentation").value;
+    const modeOfPresentation = "Poster";
     const correspondenceAddress = document.getElementById("correspondenceAddress").value;
     const mobileNo = document.getElementById("mobileNo").value;
     const emailAddress = document.getElementById("emailAddress").value;
