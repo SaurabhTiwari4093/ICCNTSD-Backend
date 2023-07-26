@@ -4,10 +4,11 @@ const sendAbstractData = async (e) => {
     const phone = document.getElementById("phone").value;
     const email = document.getElementById("email").value;
     const title = document.getElementById("title").value;
+    const grantNumber = document.getElementById("grantNumber").value;
     const abstractFile = document.getElementById("abstractFile").files[0];
 
     if (name == "" || phone == "" || email == "" || title == "") {
-        alert("All fields in form are required.");
+        alert("All * fields in form are required.");
         return;
     }
     if (abstractFile == null) {
@@ -32,6 +33,7 @@ const sendAbstractData = async (e) => {
     formData.append("phone", phone);
     formData.append("email", email);
     formData.append("title", title);
+    formData.append("grantNumber", grantNumber);
     formData.append("abstractFile", abstractFile);
 
     const requestOptions = {

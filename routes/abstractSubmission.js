@@ -55,6 +55,7 @@ router.post('/', upload.single('abstractFile'), async (req, res) => {
             email: req.body.email,
             phone: req.body.phone,
             title: req.body.title,
+            grantNumber:req.body.grantNumber,
             abstractFile: abstractFileUrl
         })
         const newAbstractSubmission = await abstractSubmission.save();

@@ -13,6 +13,9 @@ const abstractSubmissionSchema = new mongoose.Schema({
     title: {
         type: String,
     },
+    grantNumber:{
+        type:String,
+    },
     abstractFile: {
         type: String,
     },
